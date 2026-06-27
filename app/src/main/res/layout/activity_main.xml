@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <!-- Display Area -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="bottom|end"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvExpression"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="@string/zero"
+            android:textColor="@color/white"
+            android:textSize="64sp"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <!-- Basic Calculator Pad -->
+    <GridLayout
+        android:id="@+id/basicPad"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:columnCount="4"
+        android:rowCount="5"
+        android:visibility="visible">
+
+        <!-- Row 1 -->
+        <Button style="@style/FunctionButton" android:id="@+id/btnAC" android:text="@string/ac" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnBackspace" android:text="@string/backspace" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnAnsBasic" android:text="@string/ans" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnDivideBasic" android:text="@string/divide" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+
+        <!-- Row 2 -->
+        <Button style="@style/NumberButton" android:id="@+id/btn7Basic" android:text="@string/seven" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/NumberButton" android:id="@+id/btn8Basic" android:text="@string/eight" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/NumberButton" android:id="@+id/btn9Basic" android:text="@string/nine" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnMultiplyBasic" android:text="@string/multiply" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+
+        <!-- Row 3 -->
+
+        <Button style="@style/NumberButton" android:id="@+id/btn4Basic" android:text="@string/four" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/NumberButton" android:id="@+id/btn5Basic" android:text="@string/five" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/NumberButton" android:id="@+id/btn6Basic" android:text="@string/six" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnMinusBasic" android:text="@string/minus" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+
+        <!-- Row 4 -->
+        <Button style="@style/NumberButton" android:id="@+id/btn1Basic" android:text="@string/one" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/NumberButton" android:id="@+id/btn2Basic" android:text="@string/two" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/NumberButton" android:id="@+id/btn3Basic" android:text="@string/three" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnPlusBasic" android:text="@string/plus" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+
+        <!-- Row 5 -->
+        <Button style="@style/EqualsButton" android:id="@+id/btnSwitchToAdv" android:text="@string/adv" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+
+        <Button
+            android:id="@+id/btn0Basic"
+            style="@style/NumberButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:text="@string/zero"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+        <Button style="@style/NumberButton" android:id="@+id/btnDotBasic" android:text="@string/dot" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/EqualsButton" android:id="@+id/btnEqualsBasic" android:text="@string/equals" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+    </GridLayout>
+
+    <!-- Advanced Calculator Pad -->
+    <GridLayout
+        android:id="@+id/advPad"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:columnCount="5"
+        android:rowCount="7"
+        android:visibility="gone">
+
+        <!-- Row 1 -->
+        <Button style="@style/FunctionButton" android:id="@+id/btn2nd" android:text="@string/second" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnDegRad" android:text="@string/deg" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnSin" android:text="@string/sin" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnCos" android:text="@string/cos" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnTan" android:text="@string/tan" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+
+        <!-- Row 2 -->
+        <Button style="@style/FunctionButton" android:id="@+id/btnPower" android:text="@string/xy" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnLg" android:text="@string/lg" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnLn" android:text="@string/ln" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnOpenBracket" android:text="@string/bracket_open" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnCloseBracket" android:text="@string/bracket_close" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+
+        <!-- Row 3 -->
+        <Button style="@style/FunctionButton" android:id="@+id/btnSqrt" android:text="@string/sqrt" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnACAdv" android:text="@string/ac" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnBackspaceAdv" android:text="@string/backspace" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnAnsAdv" android:text="@string/ans" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnDivideAdv" android:text="@string/divide" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+
+        <!-- Row 4 -->
+        <Button style="@style/FunctionButton" android:id="@+id/btnFactorial" android:text="@string/factorial" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/NumberButton" android:id="@+id/btn7Adv" android:text="@string/seven" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/NumberButton" android:id="@+id/btn8Adv" android:text="@string/eight" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/NumberButton" android:id="@+id/btn9Adv" android:text="@string/nine" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnMultiplyAdv" android:text="@string/multiply" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+
+        <!-- Row 5 -->
+        <Button style="@style/FunctionButton" android:id="@+id/btnInv" android:text="@string/inv" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/NumberButton" android:id="@+id/btn4Adv" android:text="@string/four" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/NumberButton" android:id="@+id/btn5Adv" android:text="@string/five" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/NumberButton" android:id="@+id/btn6Adv" android:text="@string/six" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnMinusAdv" android:text="@string/minus" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+
+        <!-- Row 6 -->
+        <Button style="@style/FunctionButton" android:id="@+id/btnPi" android:text="@string/pi" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/NumberButton" android:id="@+id/btn1Adv" android:text="@string/one" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/NumberButton" android:id="@+id/btn2Adv" android:text="@string/two" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/NumberButton" android:id="@+id/btn3Adv" android:text="@string/three" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/FunctionButton" android:id="@+id/btnPlusAdv" android:text="@string/plus" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+
+        <!-- Row 7 -->
+        <Button style="@style/EqualsButton" android:id="@+id/btnSwitchToBasic" android:text="@string/basic" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/NumberButton" android:id="@+id/btnE" android:text="@string/e" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/NumberButton" android:id="@+id/btn0Adv" android:text="@string/zero" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/NumberButton" android:id="@+id/btnDotAdv" android:text="@string/dot" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+        <Button style="@style/EqualsButton" android:id="@+id/btnEqualsAdv" android:text="@string/equals" android:layout_columnWeight="1" android:layout_rowWeight="1" />
+    </GridLayout>
+
+</LinearLayout>
